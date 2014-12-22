@@ -6,24 +6,24 @@
 <div class="content-wrapper">
 
 	{# Begin the content loop #}
-    {% for post in posts %}
+	{% for post in posts %}
 
-    	{# Include content-single.twig that comes with the Maera parent theme.  This can also be overriden in the child theme. #}
-        {% include 'content-single.twig' %}
+		{# Include content-single.twig that comes with the Maera parent theme.  This can also be overriden in the child theme. #}
+		{% include 'content-single.twig' %}
 
 		{# Pagination #}
-        {{ function( 'wp_link_pages', { 'before': '<div class="page-links" itemprop="pagination">' . __( 'Pages:', 'maera' ), 'after': '</div>' }) }}
+		{{ function( 'wp_link_pages', { 'before': '<div class="page-links" itemprop="pagination">' . __( 'Pages:', 'maera' ), 'after': '</div>' }) }}
 
-        <div class="clearfix"></div>
+		<div class="clearfix"></div>
 
-        {# If comments are open, or we have at least one comment, load up the comment template. #}
-        {% if function('comments_open') or function('get_comments_number', post.ID) > 0 %}
-            {{ function('comments_template') }}
-        {% endif %}
-        {# End the comment conditional statement. #}
+		{# If comments are open, or we have at least one comment, load up the comment template. #}
+		{% if function('comments_open') or function('get_comments_number', post.ID) > 0 %}
+			{{ function('comments_template') }}
+		{% endif %}
+		{# End the comment conditional statement. #}
 
-    {% endfor %}
-    {# End the content loop #}
+	{% endfor %}
+	{# End the content loop #}
 
 </div>
 {% endblock %}
