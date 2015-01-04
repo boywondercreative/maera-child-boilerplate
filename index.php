@@ -16,35 +16,25 @@
  * If they are not, then do not proceed with loading the template.
  * Instead, display a custom template file that urges users to visit their dashboard to install them.
  */
-if ( 'bad' == Maera::test_missing() ) {
-	get_template_part( 'lib/required-error' );
-	return;
-}
-
-$context = Maera_Timber::get_context();
-$context['posts'] = Timber::get_posts();
+Maera_Template::dependencies();
 
 
 /**
  * This function retrieves the header content and places it on the page.
  */
 // Header
-get_header();
+Maera_Template::header();
 
 
 /**
  * This function renders the main body content and places it on the page.
  */
 // Content
-Timber::render(
-	Maera_Timber::twig_archive_templates(),
-	$context,
-	apply_filters( 'maera/timber/cache', false )
-);
+Maera_Template::main();
 
 
 /**
  * This function retrieves the footer content and places it on the page.
  */
 // Footer
-get_footer();
+Maera_Template::footer();
