@@ -16,25 +16,26 @@
  * If they are not, then do not proceed with loading the template.
  * Instead, display a custom template file that urges users to visit their dashboard to install them.
  */
-Maera_Template::dependencies();
+Maera()->template->dependencies();
 
 
 /**
  * This function retrieves the header content and places it on the page.
  */
 // Header
-Maera_Template::header();
+Maera()->template->header();
 
 
 /**
  * This function renders the main body content and places it on the page.
  */
 // Content
-Maera_Template::main();
+Maera()->template->render();
 
 
 /**
  * This function retrieves the footer content and places it on the page.
  */
 // Footer
-Maera_Template::footer();
+Maera()->template->footer();
+
